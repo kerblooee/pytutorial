@@ -13145,7 +13145,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3>
+<h3 id="Table-of-Contents"><a id="toc">Table of Contents</a><a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13160,8 +13160,9 @@ div#notebook {
 <li><a href="#index">indexing</a></li>
 <li><a href="#slice">slicing</a></li>
 </ul>
-<p>BACK TO <a href="python_tutorial.ipynb">Level 0: A New Language</a>
-<br />ON TO [Level 2: Conditionals and Loops]</p>
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html">Level 1 Exercises</a></p>
+<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 0: A New Language</a>
+<br />ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and Loops</a></p>
 
 </div>
 </div>
@@ -13358,6 +13359,15 @@ sub2sub2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#varop_ex">TO THE VARIABLE OPERATIONS EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>You can also perform <a id='oplist'>operations on lists</a>:</p>
 
 </div>
@@ -13365,7 +13375,7 @@ sub2sub2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nrs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -13406,7 +13416,7 @@ sub2sub2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span> <span class="o">*</span> <span class="n">subject_names</span><span class="p">)</span>
@@ -13429,7 +13439,7 @@ sub2sub2
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-2e17d3ba3acf&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-2e17d3ba3acf&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>subject_nrs <span class="ansi-blue-fg">*</span> subject_names<span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;list&#39;</pre>
@@ -13450,7 +13460,7 @@ sub2sub2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
@@ -13489,7 +13499,7 @@ sub2sub2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="o">*</span><span class="n">subject_nr</span><span class="p">)</span>
@@ -13508,8 +13518,61 @@ sub2sub2
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-9-f2e483797462&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>subject_nrs<span class="ansi-blue-fg">*</span>subject_nr<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;subject_nr&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are many other ways of manipulating lists with built-in functions. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nrs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#removes a value from a list </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
+
+<span class="n">subject_nrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1">#appends a new number to the end of the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
+
+<span class="n">subject_nrs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span> <span class="c1">#joins multiple lists together into 1 list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+<pre>[1, 2, 3, 5]
+[1, 2, 3, 5, 6]
+[1, 2, 3, 5, 6, 7, 8, 9]
 </pre>
 </div>
 </div>
@@ -13517,6 +13580,15 @@ sub2sub2
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#listop_ex">TO THE LIST OPERATIONS EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13842,6 +13914,15 @@ sub2sub2
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The "shuffle" function shuffles the order of tuples in a list, without shuffling the strings within each tuple. This is important -- although you want to shuffle the order of conditions, you don't want to mess up the specific directory-image pairs you have defined previously.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#zip_ex">TO THE ZIPPING EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
 </div>
@@ -14178,6 +14259,94 @@ f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, let's go back to our list of subject_nrs, which is now a list of numbers 1-9, but with the 4 removed:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Say we want to put the 4 back into the list. We can do this with a built-in python function called "insert" that takes 2 arguments: 1.) the index, and 2.) the value you want to insert at that index. Like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nrs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#insert(index,value) - remember python indexing starts at 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, 3, 4, 4, 5, 6, 7, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#index_ex">TO THE INDEXING EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>If you want to access multiple indices at once, you can use <a id='slice'>slicing</a>. Slicing is exactly what it sounds like -- it slices the item using a colon : . You can also define with an index where you want to start or end the slice. First, let's define a new string variable to demonstrate how to slice:</p>
 
 </div>
@@ -14185,10 +14354,10 @@ f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">slicy</span> <span class="o">=</span> <span class="s1">&#39;ilovepython&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">slicy</span> <span class="o">=</span> <span class="s1">&#39;i love python&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[:])</span> <span class="c1">#print the entire slice</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span> <span class="c1">#print a slice up until index 3</span>
@@ -14210,10 +14379,10 @@ f
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ilovepython
-ilo
-vepython
-vep
+<pre>i love python
+i l
+ove python
+ove
 </pre>
 </div>
 </div>
@@ -14232,7 +14401,7 @@ vep
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
@@ -14252,7 +14421,7 @@ vep
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>oeyh
+<pre>lv y
 </pre>
 </div>
 </div>
@@ -14264,7 +14433,7 @@ vep
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means, start with the character with an index of 2 "o" and print every other number (step=2) up to the character with an index of 10.</p>
+<p>This means, start with the character with an index of 2 "o" and print every other character (step=2) up to the character with an index of 10.</p>
 
 </div>
 </div>
@@ -14279,7 +14448,7 @@ vep
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
@@ -14299,7 +14468,7 @@ vep
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ioeyhn
+<pre>ilv yhn
 </pre>
 </div>
 </div>
@@ -14311,14 +14480,14 @@ vep
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also print the whole word backwards by using "-1" as the step:</p>
+<p>You can also print the whole string backwards by using "-1" as the step:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -14338,7 +14507,7 @@ vep
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>nohtypevoli
+<pre>nohtyp evol i
 </pre>
 </div>
 </div>
@@ -14351,6 +14520,15 @@ vep
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this case, the syntax means "start at the end, and end at the beginning, going backwards by 1 character each step".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#https://kerblooee.github.io/pytutorial/level1_exercises.html#slice_ex">TO THE SLICING EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
 </div>
