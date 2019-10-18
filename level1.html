@@ -13160,7 +13160,7 @@ div#notebook {
 <li><a href="#index">indexing</a></li>
 <li><a href="#slice">slicing</a></li>
 </ul>
-<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html">Level 1 Exercises</a></p>
+<p><a href="level1_exercises.ipynb">Level 1 Exercises</a></p>
 <p>BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 0: A New Language</a>
 <br />ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and Loops</a></p>
 
@@ -13579,7 +13579,7 @@ sub2sub2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#https://kerblooee.github.io/pytutorial/level1_exercises.html#listop_ex">TO THE LIST OPERATIONS EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#listop_ex">TO THE LIST OPERATIONS EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
@@ -13654,7 +13654,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;zip object at 0x7f3f705a27c8&gt;
+<pre>&lt;zip object at 0x7fb3841d6108&gt;
 </pre>
 </div>
 </div>
@@ -13896,7 +13896,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[(&#39;faces&#39;, &#39;im2.png&#39;), (&#39;houses&#39;, &#39;im3.png&#39;), (&#39;faces&#39;, &#39;im5.png&#39;), (&#39;houses&#39;, &#39;im2.png&#39;), (&#39;houses&#39;, &#39;im1.png&#39;), (&#39;houses&#39;, &#39;im4.png&#39;), (&#39;faces&#39;, &#39;im1.png&#39;), (&#39;faces&#39;, &#39;im3.png&#39;), (&#39;houses&#39;, &#39;im5.png&#39;), (&#39;faces&#39;, &#39;im4.png&#39;)]
+<pre>[(&#39;houses&#39;, &#39;im4.png&#39;), (&#39;faces&#39;, &#39;im3.png&#39;), (&#39;faces&#39;, &#39;im1.png&#39;), (&#39;houses&#39;, &#39;im5.png&#39;), (&#39;houses&#39;, &#39;im3.png&#39;), (&#39;faces&#39;, &#39;im2.png&#39;), (&#39;faces&#39;, &#39;im4.png&#39;), (&#39;houses&#39;, &#39;im1.png&#39;), (&#39;faces&#39;, &#39;im5.png&#39;), (&#39;houses&#39;, &#39;im2.png&#39;)]
 </pre>
 </div>
 </div>
@@ -13916,7 +13916,7 @@ sub2sub2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#https://kerblooee.github.io/pytutorial/level1_exercises.html#zip_ex">TO THE ZIPPING EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#zip_ex">TO THE ZIPPING EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
@@ -13952,7 +13952,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(&#39;faces&#39;, &#39;im2.png&#39;)
+<pre>(&#39;houses&#39;, &#39;im4.png&#39;)
 </pre>
 </div>
 </div>
@@ -13991,7 +13991,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>faces
+<pre>houses
 </pre>
 </div>
 </div>
@@ -14030,7 +14030,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>im2.png
+<pre>im4.png
 </pre>
 </div>
 </div>
@@ -14121,7 +14121,7 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>f
+<pre>h
 </pre>
 </div>
 </div>
@@ -14240,9 +14240,9 @@ sub2sub2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(&#39;faces&#39;, &#39;im2.png&#39;)
-faces
-f
+<pre>(&#39;houses&#39;, &#39;im4.png&#39;)
+houses
+h
 </pre>
 </div>
 </div>
@@ -14333,7 +14333,98 @@ f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#https://kerblooee.github.io/pytutorial/level1_exercises.html#index_ex">TO THE INDEXING EXERCISES</a></p>
+<p>As for indexing in dictionaries, it's a little different from indexing in lists. As mentioned in level0, items stored in a dictionary do not have a set placement index:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;two&#39;: 2, &#39;one&#39;: 1, &#39;three&#39;: 3}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this case, you do not index by placement, but rather by label:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;two&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;three&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nifty!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#index_ex">TO THE INDEXING EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
@@ -14349,7 +14440,7 @@ f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">slicy</span> <span class="o">=</span> <span class="s1">&#39;i love python&#39;</span>
@@ -14396,7 +14487,7 @@ ove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
@@ -14443,7 +14534,7 @@ ove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
@@ -14482,7 +14573,7 @@ ove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">slicy</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -14522,7 +14613,7 @@ ove
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#https://kerblooee.github.io/pytutorial/level1_exercises.html#slice_ex">TO THE SLICING EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level1_exercises.html#slice_ex">TO THE SLICING EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
