@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>python_tutorial</title>
+<title>level4</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-Tutorial:-Level-0">Python Tutorial: Level 0<a class="anchor-link" href="#Python-Tutorial:-Level-0">&#182;</a></h1>
+<h1 id="Python-Tutorial:-Level-4">Python Tutorial: Level 4<a class="anchor-link" href="#Python-Tutorial:-Level-4">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13152,21 +13152,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#level0">Level 0: A New Language</a></p>
+<p><a href="#level4">Level 4: PsychoPy - Showing windows and stimuli</a></p>
 <ul>
-<li><a href="#print">print</a></li>
-<li><a href="#operations">operations</a></li>
-<li><a href="#variables">variables</a> </li>
-<li><a href="#booleans">booleans</a> and <a href="#boolop">boolean operators</a></li>
-<li><a href="#lists">lists</a></li>
-<li><a href="#dicts">dictionaries</a></li>
-<li><a href="#arrays">arrays</a></li>
+<li><a href="#dlg">Dialog boxes</a></li>
+<li><a href="#def">Define monitor and window</a></li>
+<li><a href="#create">Create and show stimuli: text and images</a></li>
 </ul>
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html">Level 0 Exercises</a></p>
-<p>ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level1.html">Level 1: Manipulating Variables</a></p>
-<p>ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and loops</a></p>
-<p>ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level3.html">Level 3: PsychoPy 101</a></p>
-<p>ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level4.html">Level 4: PsychoPy 101 - Showing windows and stimuli</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html">Level 4 Exercises</a></p>
+<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 0: A New Language</a>
+<br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level1.html">Level 1: Manipulating Variables</a>
+<br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and Loops</a>
+<br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level3.html">Level 3: PsychoPy 101</a></p>
+<p><br />ONWARD TO <a href="level5.ipynb">Level 5: Clocks and timing</a></p>
 
 </div>
 </div>
@@ -13174,15 +13171,22 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Level-0:-A-New-Language"><a id="level0">Level 0: A New Language</a><a class="anchor-link" href="#Level-0:-A-New-Language">&#182;</a></h2>
+<h2 id="Level-4:-PsychoPy---Showing-windows-and-stimuli"><a id="level4">Level 4: PsychoPy - Showing windows and stimuli</a><a class="anchor-link" href="#Level-4:-PsychoPy---Showing-windows-and-stimuli">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before you can start programming your own experiment, you have to be comfortable with a syntax and grammar that computers can understand. If you are completely unfamiliar to programming, you're in luck! Python is a relatively easy language to learn.</p>
-<p>Let's begin with the <a id='print'>print</a> function:</p>
+<p>The first thing you should do in an experiment, before presenting stimuli and collecting responses, is to collect participant information. This includes at the very least the participant number, as well as various demographic information that will be needed for any report of your experiment (gender, handedness, age, among other things). The best way to collect participant info is with a <a id='dlg'>dialog box</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We first have to create a dictionary of variables, with each variable representing some information we want to collect. Like this:</p>
 
 </div>
 </div>
@@ -13192,7 +13196,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love python!&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exp_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;handedness&#39;</span><span class="p">:(</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;ambi&#39;</span><span class="p">),</span> 
+            <span class="s1">&#39;gender&#39;</span><span class="p">:(</span><span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">,</span><span class="s1">&#39;other&#39;</span><span class="p">,</span><span class="s1">&#39;prefer not to say&#39;</span><span class="p">)}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">exp_info</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13209,7 +13216,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>I love python!
+<pre>{&#39;subject_nr&#39;: &#39;&#39;, &#39;handedness&#39;: (&#39;right&#39;, &#39;left&#39;, &#39;ambi&#39;), &#39;age&#39;: &#39;&#39;, &#39;gender&#39;: (&#39;male&#39;, &#39;female&#39;, &#39;other&#39;, &#39;prefer not to say&#39;)}
 </pre>
 </div>
 </div>
@@ -13221,7 +13228,82 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As of Python3, you have to put your text (called a string) in parentheses, or else it throws an error, like this:</p>
+<p>Then, we have to import the psychopy module "gui" (graphical user interface):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">gui</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can take a look at the various functions contained in "gui". The one we are going to use is "DlgFromDict" which createa a dialog box from a dictionary you define. The psychopy help page gives you the following information:</p>
+
+</div>
+</div>
+</div>class psychopy.gui.DlgFromDict(dictionary, title='', fixed=None, order=None, tip=None, screen=-1, sortKeys=True, copyDict=False, labels=None, show=True, **kwargs)
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It shows you that psychopy.gui.DlgFromDict() is a class you can import. If you don't import "gui" at the top of your script, you will have to create your dialog box by typing "psychopy.gui.DlgFromDict", followed by all the arguments in parentheses. If you import gui at the top of your script, you can create your dialog box with "gui.DlgFromDict".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So what is all that stuff in the parentheses? This tells you all the options you have for customizing your dialog box. There are lots of default settings you do not need to change right now -- the only necessary argument to create a dialog box is the dictionary.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">DlgFromDict</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="n">exp_info</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Running this will open up a dialog box:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data:image/png;base64, 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" alt="dlg_example.png"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now you can enter information in the empty boxes and use the drop-down lists. If you press "OK", the information will be updated in the dictionary and saved in the Variable explorer. If you press "Cancel", the dictionary will refresh back to the default empty boxes.</p>
+<p>You can customize the dialog box in different ways. Age and subject_nr appear as empty boxes because we defined them as empty strings in exp_info:</p>
 
 </div>
 </div>
@@ -13231,7 +13313,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;I love python!&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">{</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13244,17 +13326,15 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-2-000ed96e6fe9&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    print &#34;I love python!&#34;</span>
-                         ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> Missing parentheses in call to &#39;print&#39;
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;age&#39;: &#39;&#39;, &#39;subject_nr&#39;: &#39;&#39;}</pre>
 </div>
+
 </div>
 
 </div>
@@ -13264,132 +13344,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At least python will tell you where you screwed up most of the time.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use single quotations or double quotations to write text to the screen, but you will also get an error if you forget to put your text in quotations:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">I</span> <span class="n">love</span> <span class="n">python</span><span class="o">!)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-1-7131d36d4760&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
-<span class="ansi-red-fg">    print(I love python!)</span>
-               ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#print_ex">TO THE PRINT EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python can do all kind of basic mathematical <a id='operations'>operations</a>, such as:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#addition</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#subtraction</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">10.0</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="c1">#division (NOTE: if you do not want to round to the nearest whole number, </span>
-                  <span class="c1">#use floats instead of integers)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">#modulo</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">11</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#multiplication</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#exponentiation</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Notice that the "#" symbol is what you can use to comment your script. Comments are your notes, usually telling you what a line means or why you wrote it. Anything following "#" (on the same line) will be ignored when you run your script. <em>It is very important to always comment your script!!</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You don't need spaces between individual symbols:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#oper_ex">TO THE OPERATIONS EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>An important part of python is the <a id='variables'>variable</a>, which allows you to categorize your data with different labels. A simple variable can contain a single value (number or text):</p>
+<p>To create a drop-down list by defining options in a tuple, like handedness and gender:</p>
 
 </div>
 </div>
@@ -13399,8 +13354,70 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nr</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">subject_name</span> <span class="o">=</span> <span class="s1">&#39;sub2&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">{</span><span class="s1">&#39;handedness&#39;</span><span class="p">:(</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="s1">&#39;ambi&#39;</span><span class="p">),</span> <span class="s1">&#39;gender&#39;</span><span class="p">:(</span><span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">,</span><span class="s1">&#39;other&#39;</span><span class="p">,</span><span class="s1">&#39;prefer not to say&#39;</span><span class="p">)}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;gender&#39;: (&#39;male&#39;, &#39;female&#39;, &#39;other&#39;, &#39;prefer not to say&#39;),
+ &#39;handedness&#39;: (&#39;right&#39;, &#39;left&#39;, &#39;ambi&#39;)}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can tinker with the different options to customize dialog boxes in the exercises.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once you enter info in the dialog box, you can flag certain things that might be bad for your experiment later on with another dialog box -- for example, if you forgot to enter the subject_nr, or the subject is not 18 and therefore cannot give consent to take part in an experiment. Flagging errors only requires an error message, so you don't need to make a DlgFromDict for this. You can use PsychoPy's original Dlg function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#make sure subject data is entered correctly</span>
+<span class="k">if</span> <span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">==</span><span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="c1">#nothing entered</span>
+    <span class="c1">#create another dialog box (not from a dictionary because we&#39;re just showing an error message)</span>
+    <span class="n">err_dlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">Dlg</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;error message&#39;</span><span class="p">)</span> <span class="c1">#give the dlg a title</span>
+    <span class="n">err_dlg</span><span class="o">.</span><span class="n">addText</span><span class="p">(</span><span class="s1">&#39;Enter a valid subject number!&#39;</span><span class="p">)</span> <span class="c1">#create an error message</span>
+    <span class="n">err_dlg</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">#show the dlg</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span> <span class="c1">#quit the experiment</span>
+    
+<span class="c1">#make sure subject can consent to taking part in the experiment        </span>
+<span class="k">if</span> <span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="n">err_dlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">Dlg</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;error message&#39;</span><span class="p">)</span>
+    <span class="n">err_dlg</span><span class="o">.</span><span class="n">addText</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> year olds cannot give consent!&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]))</span>
+    <span class="n">err_dlg</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13411,7 +13428,34 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Variables do not automatically show up in your output without "print". You can print variables in different ways:</p>
+<p>The Dlg function requires you to manually addtext, show the box, and then close it. DlgFromDict is more clever and does this all automatically. You can create complex dialog boxes with Dlg as well, but it is less efficient to have to define every field in another line of code. For example, you can create my_dlg like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dlg</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">Dlg</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;my experiment&quot;</span><span class="p">)</span>
+<span class="n">my_dlg</span><span class="o">.</span><span class="n">addText</span><span class="p">(</span><span class="s1">&#39;exp_info&#39;</span><span class="p">)</span>
+<span class="n">my_dlg</span><span class="o">.</span><span class="n">addField</span><span class="p">(</span><span class="s1">&#39;age:&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">my_dlg</span><span class="o">.</span><span class="n">addField</span><span class="p">(</span><span class="s1">&#39;gender:&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">,</span> <span class="s1">&#39;prefer not to say&#39;</span><span class="p">])</span>
+<span class="n">my_dlg</span><span class="o">.</span><span class="n">addField</span><span class="p">(</span><span class="s1">&#39;handedness:&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">])</span>
+<span class="n">my_dlg</span><span class="o">.</span><span class="n">addField</span><span class="p">(</span><span class="s1">&#39;subject_nr:&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">show_dlg</span> <span class="o">=</span> <span class="n">my_dlg</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># show dialog and wait for OK or Cancel</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once you've collected your subject info, it's updated in the dictionary exp_info. You can add things to exp_info after the subject is done entering their information - for example, today's date. This is handy to store with the subject info. To automatically store the date of the experiment, you must first import the python function datetime:</p>
 
 </div>
 </div>
@@ -13421,10 +13465,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">subject_nr</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_name</span><span class="p">,</span><span class="n">subject_nr</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_nr</span><span class="p">,</span><span class="n">subject_nr</span><span class="p">,</span><span class="n">subject_nr</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1">#what time is it right now?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13441,10 +13485,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2
-sub2
-sub2 2
-2 2 2
+<pre>2019-11-28 11:34:19.077492
 </pre>
 </div>
 </div>
@@ -13456,7 +13497,7 @@ sub2 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once a variable is assigned in a script, it is remembered until you close your session. When you are programming an experiment, you can call a single variable multiple times throughout your script. You can also reassign a variable:</p>
+<p>This gives you an output in the following order: year, month, day, hour, minute, second, microsecond. You can choose how much of this output you want to store with your subject info (I usually only save the day, month, and year). To add a variable to exp_info, simply define it as you would any other variable in the dictionary:</p>
 
 </div>
 </div>
@@ -13466,8 +13507,8 @@ sub2 2
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nr</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_nr</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13484,7 +13525,7 @@ sub2 2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3
+<pre>28112019
 </pre>
 </div>
 </div>
@@ -13496,9 +13537,7 @@ sub2 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Reassigning a variable can be very useful, for example, when you want to cycle through experimental trials (trial=1, trial=2, etc.). Be careful that you don't reassign variables accidentally, and always give your variables sensical names.</p>
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#var_ex">TO THE VARIABLE EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+<p>You can make this look prettier by separating values with slashes or dashes, etc. But you get the idea.</p>
 
 </div>
 </div>
@@ -13506,7 +13545,7 @@ sub2 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Your variable can also be a <a id='booleans'>boolean</a>, which is a truth value (True or False):</p>
+<p>Finally, we want to create a unique filename so that we can easily save our exp_info data (we'll learn how to save later).</p>
 
 </div>
 </div>
@@ -13516,8 +13555,12 @@ sub2 2
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fullscreen</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fullscreen</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;subject_nr&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">exp_info</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span> <span class="c1">#create a unique filename</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">main_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1">#define the main directory where experiment info is stored</span>
+<span class="n">sub_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">main_dir</span><span class="p">,</span><span class="s1">&#39;sub_info&#39;</span><span class="p">,</span><span class="n">filename</span><span class="p">)</span> <span class="c1">#create a subject info directory to save subject info as a csv</span>
 </pre></div>
 
     </div>
@@ -13534,7 +13577,7 @@ sub2 2
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>False
+<pre>_28112019.csv
 </pre>
 </div>
 </div>
@@ -13546,7 +13589,304 @@ sub2 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Booleans are useful for letting your experiment know whether to go on depending on if certain conditions are met. For example, you can program the experiment so that it must be in fullscreen mode to begin. To check whether you are in fullscreen mode, you can use the comparison operator "==" ("is equal to"):</p>
+<p>And that's how you can collect and store experiment info from a dialog box and datetime in 30 seconds.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html#dlg_ex">TO THE DIALOG BOX EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once you have collected subject info, you can go to the next step of starting the experiment: defining the <a id='def'>monitor</a> (the parameters of the specific monitor you are working on) and <a id='def'>window</a> (the screen on which you will show your experiment). This is important because depending on the size and shape of the monitor, your experiment may look different. For example, if you have stimuli that appear a certain distance from the center, you don't want parts of them to be cut off because your monitor is narrower than you expected. The window is defined separately from the monitor, but it relies on the parameters of the monitor. You can specify whether you want your experiment window to appear in a smaller box on your monitor, or it can be fullscreen.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, we have to import the respective functions from psychopy (window requires the "visual" function):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's look at the "monitor" information that psychopy provides:</p>
+
+</div>
+</div>
+</div>class psychopy.monitors.Monitor(name, width=None, distance=None, gamma=None, notes=None, useBits=None, verbose=True, currentCalib=None, autoLog=True)
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Again, this tells you the syntax needed to define a monitor, and the arguments you can include.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have to know some things about our current monitor: its width in cm, its size in pixels, and your (rough) distance from the screen in cm. Distance is typically set at 57 or 60cm if subjects in your experiment are sitting at a "free viewing distance" from the screen. If you need your subjects to be an exact distance away (and you use a chin rest or stabilize the subject in another way), grab a friend and measure with a tape measure. You also have to measure the diagonal of your monitor to find the width. You should be able to find the pixel resolution of your monitor in the monitor settings on your computer. These are the three arguments you need to define the monitor. The other arguments can stay at default for now.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#you will need to change this for every new monitor on which you run your experiment</span>
+<span class="c1">#your own monitor width and pixel resolution will probably be different from mine</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> <span class="c1">#give your monitor a name, define width and distance</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1600</span><span class="p">,</span><span class="mi">900</span><span class="p">])</span> <span class="c1">#use x,y coordinates to specify the pixel resolution of your monitor</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's all we need to define the monitor. Now on to the window:</p>
+
+</div>
+</div>
+</div>class psychopy.visual.Window(size=(800, 600), pos=None, color=(0, 0, 0), colorSpace='rgb', rgb=None, dkl=None, lms=None, fullscr=None, allowGUI=None, monitor=None, bitsMode=None, winType=None, units=None, gamma=None, blendMode='avg', screen=0, viewScale=None, viewPos=None, viewOri=0.0, waitBlanking=True, allowStencil=False, multiSample=False, numSamples=2, stereo=False, name='window1', checkTiming=True, useFBO=False, useRetina=True, autoLog=True, gammaErrorPolicy='raise', *args, **kwargs)
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, the default window that is created has a size of 800x600 pixels, is centered on the monitor, is white, etc etc. The only argument you need to specify, if you want to keep all the other defaults, is the monitor. Window is linked to the monitor parameters you specify, so you can simply write:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>-and you have your window. To add arguments, simply add them inside the parentheses in any order you like:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html#def_ex">TO THE MONITOR AND WINDOW EXERCISES</a></p>
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once the monitor and window have been defined, you can  <a id='create'>create your stimuli</a>. The stimuli can be created before you show them on-screen. To present a stimulus, you have to tell python to flip the window (win.flip) which we will get to in a moment. It's good to pre-define as much as you can about your stimuli <em>before</em> you start your trial loop. This will give you the most efficient experiment.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Firstly, you can visit the psychopy webpage on the <a href="https://www.psychopy.org/api/visual.html">visual module</a> to take a look at all the different stimuli you can create. The ones we are going to use for our experiment are text and images. Let's start with text:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you look at the psychopy help page on TextStim (click on the highlighted text on the "visual" page), the only argument you need to define is "win". win points to monitor, and all is well. However, if you want to customize your text, you have to define it in your script. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_msg</span> <span class="o">=</span> <span class="s1">&#39;Welcome to my experiment!&#39;</span>
+<span class="n">my_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">start_msg</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So let's present our text in a window. The basic information we need is this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span>
+
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> <span class="c1">#define the monitor parameters</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1600</span><span class="p">,</span><span class="mi">900</span><span class="p">])</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">)</span> <span class="c1">#define a window</span>
+
+<span class="n">start_msg</span> <span class="o">=</span> <span class="s1">&#39;Welcome to my experiment!&#39;</span> <span class="c1">#write the start message</span>
+<span class="n">my_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">start_msg</span><span class="p">)</span> <span class="c1">#create the text stimulus</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then we need to draw the stimulus:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This draws the text to a back-buffer, waiting to be flipped to the front (where we can see it). To finally show the text, we need to add one more line:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you write all of this, it will show the text... but the text will never go away. We have to control how long a stimulus appears and when to close the experiment. To make the stimulus appear until a button has been pressed, then close the experiment, we need two lines:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">event</span> <span class="c1">#first import the &quot;event&quot; module</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for a keypress</span>
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And that's how you pre-define, draw, show, wait, and close a text stimulus. But usually in an experiment you have several stimuli you want to loop through. How do you present multiple text stimuli at different parts of the experiment? You are going to need some for loops.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's start the example by creating some text we might want to show at different points in our experiment:</p>
 
 </div>
 </div>
@@ -13556,138 +13896,87 @@ sub2 2
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fullscreen</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_msg</span> <span class="o">=</span> <span class="s2">&quot;Welcome to my experiment!&quot;</span>
+<span class="n">block_msg</span> <span class="o">=</span> <span class="s2">&quot;Press any key to continue to the next block.&quot;</span>
+<span class="n">end_trial_msg</span> <span class="o">=</span> <span class="s2">&quot;End of trial&quot;</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"fullscreen == True", in plain English, means: "Are we in fullscreen mode?" The program's answer is, "Nah".</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also check the truth value of a variable using boolean expressions: == &lt; &gt; &lt;= &gt;= !=:</p>
+<p>You can then create the visual text stimuli a few different ways. You can create a different stimulus for each text message:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">start_msg</span><span class="p">)</span> <span class="c1">#text=start_msg is the same as writing text=&quot;Welcome to my experiment!&quot;</span>
+<span class="n">block_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">block_msg</span><span class="p">)</span>
+<span class="n">end_trial_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">end_trial_msg</span><span class="p">)</span>
+
+<span class="n">start_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show the stim</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">block_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show the next stim</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">end_trial_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show the next stim</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>False
-False
-True
-False
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this case, you are asking, "Is 3 equal to 4?", "Is 4 less than 3?", "Is 3 less than or equal to 3?", "Is 3 not equal to 3?"</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Booleans also have <a id='boolop'>operators</a> (and, or, not) that can be useful for experiments:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's start with <b>and</b>:</p>
+<p>Or you can pre-define a single text stimulus and later update what is contained in the "text" argument, like this:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="c1">#create the text stimulus but don&#39;t define the text yet</span>
+
+<span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">start_msg</span> <span class="c1">#define the text</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">block_msg</span> <span class="c1">#define the text</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">end_trial_msg</span> <span class="c1">#define the text</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>False
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13695,46 +13984,30 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this case, you are asking "Are both statements true?" The "and" operator requires both statements to be true to get a "True" output. Compare this to <b>or</b>:</p>
+<p>You can update any arguments for a stimulus by typing the stimulus name, followed by a dot, then the argument you want to update. For example:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_text</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The "or" operator only needs one of the statements to be true to get a "True" output. Here we are asking, "Is at least one of the statements true?"</p>
+<p>You have to make your changes to the arguments before you draw and flip your stimulus. Drawing and flipping always come after you've defined everything you want to show.</p>
 
 </div>
 </div>
@@ -13742,514 +14015,142 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, we have <b>not</b>:</p>
+<p>So how do you change the text for different parts of the experiment? Here come the for loops!:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nBlocks</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">nTrials</span><span class="o">=</span><span class="mi">3</span>
+
+<span class="n">my_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="c1">#create the text stimulus but don&#39;t define the text yet</span>
+
+<span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">start_msg</span> <span class="c1">#define the text</span>
+<span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+
+<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nBlocks</span><span class="p">):</span>
+    <span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">block_msg</span> <span class="c1">#define the text</span>
+    <span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+    
+    <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span>
+        <span class="c1">#present some other stimuli first</span>
+        <span class="c1">#stim.draw()</span>
+        <span class="c1">#win.flip()</span>
+        <span class="c1">#...</span>
+        <span class="c1">#at the end of the trial...</span>
+        <span class="n">my_text</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">end_trial_msg</span> <span class="c1">#define the text</span>
+        <span class="n">my_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+        
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>        
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>False
-True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With "not", we are asking "Is 1 &gt; 2 not true?" The answer? True!</p>
+<p>You can then add multiple other stimuli of different types throughout your experiment. For example, an image:</p>
 
 </div>
 </div>
-</div>
+</div>class psychopy.visual.ImageStim(win, image=None, mask=None, units='', pos=(0.0, 0.0), size=None, ori=0.0, color=(1.0, 1.0, 1.0), colorSpace='rgb', contrast=1.0, opacity=1.0, depth=0, interpolate=False, flipHoriz=False, flipVert=False, texRes=128, name=None, autoLog=None, maskParams=None)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also use combined operators, such as <b>and not</b>:</p>
+<p>Just like with a text stimulus, the only thing you have to define when you create your image stimulus, is the window:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_image</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>True
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here you are asking, "Is 3 greater than 2 and 1 is not greater than 2?"</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#bool_ex">TO THE BOOLEAN EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Variables can be composed of several values, which can be expressed as a <a id='lists'>list</a>. Lists are contained in square brackets [ ] and individual items are always separated by commas:</p>
+<p>You then have to specify the image using the "image" argument. To specify a picture saved on your computer, you simply have to direct psychopy to its location:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">subject_nrs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">subject_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sub1&#39;</span><span class="p">,</span><span class="s1">&#39;sub2&#39;</span><span class="p">,</span><span class="s1">&#39;sub3&#39;</span><span class="p">,</span><span class="s1">&#39;sub4&#39;</span><span class="p">,</span><span class="s1">&#39;sub5&#39;</span><span class="p">]</span>
-<span class="n">responses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-<span class="n">exp</span> <span class="o">=</span> <span class="s1">&#39;my_exp&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/home/rae/Documents/pytutorial/exp&#39;</span><span class="p">)</span> <span class="c1">#stuff you only have to define once at the top of your script</span>
+<span class="n">main_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1">#stuff you only have to define once at the top of your script</span>
+<span class="n">image_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">main_dir</span><span class="p">,</span><span class="s1">&#39;images&#39;</span><span class="p">)</span> <span class="c1">#stuff you only have to define once at the top of your script</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_nrs</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subject_names</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
+<span class="n">pic_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span><span class="s1">&#39;face01.png&#39;</span><span class="p">)</span> <span class="c1">#point to the specific image</span>
+
+<span class="n">my_image</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">pic_loc</span><span class="p">)</span> <span class="c1">#image= the specific image (the entire directory)</span>
+
+<span class="n">my_image</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5]
-[&#39;sub1&#39;, &#39;sub2&#39;, &#39;sub3&#39;, &#39;sub4&#39;, &#39;sub5&#39;]
-[3, &#39;yes&#39;, &#39;1.0&#39;, True]
-my_exp
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, lists can be combinations of different types of values.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Instead of typing out all the items you want in your list, you can use certain functions to create lists. For example, "range":</p>
+<p>To change the image that is presented in "my_image", you can use the same "argument changing" syntax that you used with text stimuli:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trials</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>range(0, 10)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, simply printing "trials" does not produce the list as of python3. It gives you the range of numbers that the variable "trials" contains (0,10). This means that the list starts with 0 (python indexing begins at 0), and stops before 10 -- in python, this is very important! 9 is the final number in the list. We know that "trials" is an actual list of 10 numbers if we check it's length using "len":</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trials</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>10</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We know that "trials" contains a list of 10 numbers, so how do we see them? You either have to use the "list" function specifically to give you the range of numbers, or you can define the range as a list in one line:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trials</span><span class="o">=</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">trials</span><span class="p">))</span>
-
-<span class="n">trials</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, range(10) gives us a list of integers between 0 and 10, starting at 0 and ending with 9. We can also define a range from a number other than 0, in which case we have to specify the starting number following "range":</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trials</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[2, 3, 4, 5, 6, 7, 8, 9]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are lots of other functions associated with lists. For example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">maxlist</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span> <span class="c1">#finds the maximum number in the list</span>
-<span class="n">minlist</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span> <span class="c1">#finds the minimum number in the list</span>
-<span class="n">sumlist</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span> <span class="c1">#finds the sum of all numbers in the list</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">maxlist</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">minlist</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sumlist</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>9
-2
-44
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#list_ex">TO THE LIST EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Multiple variables can be stored in a <a id='dicts'>dictionary</a>. All the variables in a dictionary must be wrapped with { } brackets. Each variable must be preceded by a text label and a colon. Each variable is separated by a comma. Here is an example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;numsubs&#39;</span><span class="p">:</span><span class="n">subject_nrs</span><span class="p">,</span> <span class="s1">&#39;subnames&#39;</span><span class="p">:</span><span class="n">subject_names</span><span class="p">,</span> <span class="s1">&#39;responses&#39;</span><span class="p">:</span><span class="n">responses</span><span class="p">,</span> <span class="s1">&#39;exp&#39;</span><span class="p">:</span><span class="n">exp</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;numsubs&#39;: [1, 2, 3, 4, 5], &#39;responses&#39;: [3, &#39;yes&#39;, &#39;1.0&#39;, True], &#39;subnames&#39;: [&#39;sub1&#39;, &#39;sub2&#39;, &#39;sub3&#39;, &#39;sub4&#39;, &#39;sub5&#39;], &#39;exp&#39;: &#39;my_exp&#39;}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here you can see a few things: first, variables in the dictionary are not saved in the order they are defined (this is important for indexing, which we will get to in the next part of the tutorial). Second, variables can be different lengths and contain different kinds of information (lists, integers, tuples, etc.). Third, the text label does not have to match the variable name.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Dictionaries are the main format for storing your behavioral data in python.</p>
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#dict_ex">TO THE DICTIONARY EXERCISES</a></p>
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The final important data type for our purposes is the <a id='arrays'>array</a>. To create arrays in python, we must first import the numpy library in our script. Python does not have an in-built function to create arrays so we will always use numpy. You can then create an array like this:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1 2 3 4 5]
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>numpy.ndarray</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A numpy array looks a lot like a list, but as you can see, if you ask python to tell you what type of variable you have with "type(data)", it will give you a numpy.ndarray. Because we work with so many arrays in our scripts, it is good to give numpy an acronym so we don't have to type the whole word out every time we use the library. Numpy is shortened to "np", like this:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1">#for random shuffling</span>
+<span class="n">stims</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;face01.png&#39;</span><span class="p">,</span><span class="s1">&#39;face02.png&#39;</span><span class="p">,</span><span class="s1">&#39;face03.png&#39;</span><span class="p">]</span> <span class="c1">#create a list if images to show</span>
+<span class="n">nTrials</span><span class="o">=</span><span class="mi">3</span> <span class="c1">#create a number of trials for your images</span>
+<span class="n">my_image</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="c1">#create the stimulus but don&#39;t specify the precise image yet</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">stims</span><span class="p">)</span> <span class="c1">#shuffle order of stims</span>
+
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span> <span class="c1">#loop through trials</span>
+    
+    <span class="n">my_image</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span><span class="n">stims</span><span class="p">[</span><span class="n">trial</span><span class="p">])</span> <span class="c1">#point to a different filename for each image</span>
+    
+    <span class="n">my_image</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+    
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window after all trials have looped    </span>
 </pre></div>
 
     </div>
@@ -14260,227 +14161,7 @@ my_exp
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then we create our array by directing python to the numpy library using the acronym we defined:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1 2 3 4 5]
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>numpy.ndarray</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see, we created the same array, but with the np acronym. Once the numpy library is imported at the beginning of our script with "import numpy as np", we can continue to use this acronym throughout our script without redefining it.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[0 0 0 0 0]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>So what can we do with an array that we can't do with a list? Here are a few things...</p>
-<p><b>np.linspace(starting value, ending value, total values)</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([  0. ,   2.5,   5. ,   7.5,  10. ])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>"linspace" creates an array of values evenly spaced between two values. In parentheses, your starting value comes first, then your ending value, then the total number of values to output.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([  2.,   4.,   6.,   8.,  10.])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><b>np.logspace(starting value power of 10, ending value power of 10, total values)</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([   10.        ,    16.68100537,    27.82559402,    46.41588834,
-          77.42636827,   129.1549665 ,   215.443469  ,   359.38136638,
-         599.48425032,  1000.        ])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>"logspace" creates an array of values evenly spaced between two powers of 10 (in this case 1 and 3).</p>
+<p>Now that you know how to create and show text and images in a block or trial sequence, you can put it all together to create a coherent experiment structure! For now do not make the experiment run on its own timing, but rather stick with event.waitKeys() to flip to the next window in the exercises.</p>
 
 </div>
 </div>
@@ -14488,218 +14169,7 @@ my_exp
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><b>np.arange(start, stop, steps)</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([ 2,  6, 10, 14, 18])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>"arange" is similar to the "range" function with lists, in which you define the start and stop points (the fnial value will come before the stop point), followed by the steps. In this example, we produce an array of numbers between 2 and 20 in steps of 4.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><b> np.zeros(number of zeros to produce)</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nullarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nullarray</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also define an array of zeros with a particular shape:</p>
-<p><b>np.zeros(shape=(rows, columns))</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">null2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">null2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 0.  0.  0.]
- [ 0.  0.  0.]
- [ 0.  0.  0.]
- [ 0.  0.  0.]
- [ 0.  0.  0.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">null2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(5, 3)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can do the same thing with ones by using <b>np.ones</b>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">onearray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onearray</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 1.  1.  1.]
- [ 1.  1.  1.]
- [ 1.  1.  1.]
- [ 1.  1.  1.]
- [ 1.  1.  1.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level0_exercises.html#array_ex">TO THE ARRAY EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html#create_ex">TO THE STIMULUS EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
