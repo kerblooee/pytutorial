@@ -13120,8 +13120,8 @@ div#notebook {
 <li><a href="#create">Create and show stimuli: text and images</a></li>
 </ul>
 <p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html">Level 4 Exercises</a></p>
-<p>BACK TO <a href="python_tutorial.ipynb">Level 0: A New Language</a>
-<br />BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 1: Manipulating Variables</a>
+<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 0: A New Language</a>
+<br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level1.html">Level 1: Manipulating Variables</a>
 <br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and Loops</a>
 <br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level3.html">Level 3: PsychoPy 101</a></p>
 <p><br />ONWARD TO <a href="https://kerblooee.github.io/pytutorial/level5.html">Level 5: Clocks and timing</a></p>
@@ -13653,7 +13653,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html#def_ex">TO THE MONITOR AND WINDOW EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises#def_ex">TO THE MONITOR AND WINDOW EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
@@ -14089,6 +14089,47 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>To show simultaneous stimuli, simply draw one right after the other before you flip the window. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fix_text</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="n">my_image</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span> <span class="c1">#loop through trials</span>
+    
+    <span class="n">my_image</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_dir</span><span class="p">,</span><span class="n">stims</span><span class="p">[</span><span class="n">trial</span><span class="p">])</span> <span class="c1">#point to a different filename for each image</span>
+    
+    <span class="n">my_image</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw</span>
+    <span class="n">fix_text</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw fixation at the same time</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#show</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span> <span class="c1">#wait for keypress</span>
+    
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close the window after all trials have looped    </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Keep in mind that the order in which you draw the stimuli is important- draw the bigger image first, or else it will be drawn on top of the fixation cross and you won't be able to see the fixation. Draw the fixation on top of the image by putting its "draw" function last.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that you know how to create and show text and images in a block or trial sequence, you can put it all together to create a coherent experiment structure! For now do not make the experiment run on its own timing, but rather stick with event.waitKeys() to flip to the next window in the exercises.</p>
 
 </div>
@@ -14097,7 +14138,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises.html#create_ex">TO THE STIMULUS EXERCISES</a></p>
+<p><a href="https://kerblooee.github.io/pytutorial/level4_exercises#create_ex">TO THE STIMULUS EXERCISES</a></p>
 <p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
