@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>level5_exercises</title>
+<title>level6_exercises</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-Tutorial:-Level-5-Exercises">Python Tutorial: Level 5 Exercises<a class="anchor-link" href="#Python-Tutorial:-Level-5-Exercises">&#182;</a></h1>
+<h1 id="Python-Tutorial:-Level-6-Exercises">Python Tutorial: Level 6 Exercises<a class="anchor-link" href="#Python-Tutorial:-Level-6-Exercises">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13091,10 +13091,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#wait_ex">Wait exercises</a>
-<br /><a href="#clock_ex">Clock exercises</a></p>
-<br /><a href="#frame_ex">Frame-based timing exercises</a></p>
-<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/level5.html">Level 5: PsychoPy - Clocks and timing</a></p>
+<ul>
+<li><a href="#key_ex">PsychoPy keypress exercises</a></li>
+<li><a href="#kb_ex">Psychtoolbox keypress exercises</a></li>
+<li><a href="#record_ex">Recording data exercises</a></li>
+<li><a href="#csv_ex">Save csv exercises</a></li>
+<li><a href="#json_ex">Save JSON exercises</a></li>
+<li><a href="#json_read_ex">Read JSON exercises</a></li>
+</ul>
+<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/level6.html">Level 6: PsychoPy - Response collection and saving data</a></p>
 
 </div>
 </div>
@@ -13102,7 +13107,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wait-exercises"><a id="wait_ex">Wait exercises</a><a class="anchor-link" href="#Wait-exercises">&#182;</a></h2>
+<h2 id="PsychoPy-keypress-exercises"><a id="key_ex">PsychoPy keypress exercises</a><a class="anchor-link" href="#PsychoPy-keypress-exercises">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13110,88 +13115,147 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Fill in the following pseudocode with the real code you have learned so far using "core.wait" (and run it to make sure it works):</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>        <span class="c1">#=====================</span>
-        <span class="c1">#START TRIAL</span>
-        <span class="c1">#===================== </span>
-        <span class="c1">#-draw fixation</span>
-        <span class="c1">#-flip window</span>
-        <span class="c1">#-wait time (stimulus duration)</span>
-        
-        <span class="c1">#-draw image</span>
-        <span class="c1">#-flip window</span>
-        <span class="c1">#-wait time (stimulus duration)</span>
-        
-        <span class="c1">#-draw end trial text</span>
-        <span class="c1">#-flip window</span>
-        <span class="c1">#-wait time (stimulus duration)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Clock-exercises"><a id="clock_ex">Clock exercises</a><a class="anchor-link" href="#Clock-exercises">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Create a "wait_timer" to find out exactly how long core.wait(2) presents each image. Make sure this is not counting the time of the whole trial, but only the duration of each image. How precise is core.wait? </li>
-<li>Create a "clock_wait_timer" to find out exactly how long each image is presented when you use a clock + while loops. How precise is this?</li>
-<li>Create a "countdown_timer" to find out exactly how long each image is presented when you use a CountdownTimer + while loops. How precise is this?</li>
-<li>Edit your main experiment script so that the trials loop according to a clock timer. Also create and implement a block_timer and a trial_timer.</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Frame-based-timing-exercises"><a id="frame_ex">Frame-based timing exercises</a><a class="anchor-link" href="#Frame-based-timing-exercises">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li><p>Adjust your experiment so that it follows frame-based timing rather than clock timing (comment out the clock-based timing code in case you want to use it again) using for loops and if statements.</p>
+<li><p>event.getKeys is prone to collect as many responses as you can make in a trial, but often times you only want to collect one response for a trial. Come up with a solution so that only a single response is recorded from event.getKeys (e.g., ignoring all responses after the first response). Hint: one solution is used somewhere else in level6.</p>
 </li>
-<li><p>Add a "dropped frame" detector to your script to find out whether your experiment is dropping frames. How many total frames are dropped in the experiment? If 20 or fewer frames are dropped in the whole experiment (1 frame per trial), keep frame-based timing in your experiment. Otherwise, switch back to the CountdownTimer.</p>
+<li><p>Statement placement in your script is very important when collecting responses and refreshing keypresses. What happens if you put event.ClearEvents within the trial loop instead of outside the trial loop? What happens if you unindent the "if keys:" line?</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Psychtoolbox-keypress-exercises"><a id="kb_ex">Psychtoolbox keypress exercises</a><a class="anchor-link" href="#Psychtoolbox-keypress-exercises">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><p>Notice how "for key in keys:" in the kb examples of level6 are not indented within the stimulus presentation while loop. What happens if you indent this line? How is this different from event.getKeys?</p>
+</li>
+<li><p>Try out the kb keypress functions using core.wait instead of a CountdownTimer. What happens?</p>
+</li>
+<li><p>Use your favorite search engine to interpret epoch time from key.tDown. Add a bit of code using datetime or ctime modules to print epoch time into a readable format.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Recording-data-exercises"><a id="record_ex">Recording data exercises</a><a class="anchor-link" href="#Recording-data-exercises">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><p>Instead of collecting key name, subject RT, subject accuracy, and correct responses in lists, create a dictionary containing those variables. Then, during response collection, append the data to the dictionary instead of filling lists.</p>
+</li>
+<li><p>Keep in mind that you can pre-define dictionaries or lists for the whole experiment (in which case you have to use [block][trial] indexing to collect responses) or you can do it block-by-block (in which case you can use [trial] indexing). Create your lists (or dictionary, if you prefer) within the block loop and switch to [trial] indexing.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Save-csv-exercises"><a id="csv_ex">Save csv exercises</a><a class="anchor-link" href="#Save-csv-exercises">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Using csv.DictWriter (use your favorite search engine to find the help page), save your dictionary (that you created above) as a .csv file. </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Save-JSON-exercises"><a id="json_ex">Save JSON exercises</a><a class="anchor-link" href="#Save-JSON-exercises">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Add JSON filesaving to your experiment script.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Read-JSON-exercises"><a id="json_read_ex">Read JSON exercises</a><a class="anchor-link" href="#Read-JSON-exercises">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><p>Create a short "read and analysis" script that loads a saved JSON file, performs rudimentary analyses on the data, and prints the means.</p>
+</li>
+<li><p>Change your "read and analysis" script so that RTs for inaccurate responses are removed from analysis.</p>
+</li>
+<li><p>Change your "read and analysis" script so that any trials without a response (0 value) are removed from analysis.</p>
 </li>
 </ol>
 
