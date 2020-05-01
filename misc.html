@@ -13112,7 +13112,7 @@ div#notebook {
 <li><a href="#indtime">with independent timing</a></li>
 </ul>
 </li>
-<li><p><a href="#dynamic">Presenting dynamic stimuli: COMING SOON!</a></p>
+<li><p><a href="#dynamic">Presenting dynamic stimuli</a></p>
 </li>
 <li><p><a href="#idiot">Special: Idiot-proofing your code: COMING SOON!</a></p>
 </li>
@@ -13146,21 +13146,21 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Presenting-multiple-stimuli">Presenting multiple stimuli<a class="anchor-link" href="#Presenting-multiple-stimuli">&#182;</a></h3>
+<h3 id="Presenting-multiple-stimuli"><a id="multi">Presenting multiple stimuli</a><a class="anchor-link" href="#Presenting-multiple-stimuli">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Something I didn't have time to cover in the tutorial proper, was how to present <a id='multi'>multiple stimuli</a> at the same time. The only thing you have to do is draw more objects before flipping the window. So instead of this:</p>
+<p>Something I didn't have time to cover in the tutorial proper, was how to present multiple stimuli at the same time. The only thing you have to do is draw more objects before flipping the window. So instead of this:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#this will draw stim1 for 1 second, then stim2 for 1 second</span>
@@ -13174,33 +13174,6 @@ div#notebook {
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-adfee6c535c4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#this will draw stim1 for 1 second, then stim2 for 1 second</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>stim1<span class="ansi-blue-fg">.</span>draw<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> win<span class="ansi-blue-fg">.</span>flip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> core<span class="ansi-blue-fg">.</span>wait<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-
-<span class="ansi-red-fg">NameError</span>: name &#39;stim1&#39; is not defined</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13522,17 +13495,15 @@ div#notebook {
 
 </div>
 </div>
-</div>Frame   Index
-0       0
-1       0
-2       0
-3       0
-4       1
-5       1
-6       1
-7       1
-8       2
-etc.
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data:image/png;base64,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" alt="pyexample_1.png"></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13540,8 +13511,15 @@ etc.
 
 </div>
 </div>
-</div>Frame    Index
-16       4
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data:image/png;base64,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" alt="pyexample_2.png"></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13562,6 +13540,168 @@ etc.
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can change "%4" to "%nWords" or another value to make it more flexible for your own purposes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Presenting-dynamic-stimuli"><a id="dynamic">Presenting dynamic stimuli</a><a class="anchor-link" href="#Presenting-dynamic-stimuli">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose you want to present stimuli that move around the screen. PsychoPy has some stimuli you can choose from already:</p>
+<p><a href="https://www.psychopy.org/api/visual/radialstim.html#psychopy.visual.RadialStim">RadialStim</a> to present rotating checkerboard patterns (e.g., for retinotopic mapping)</p>
+<p><a href="https://www.psychopy.org/api/visual/dotstim.html#psychopy.visual.DotStim">DotStim</a> to present patterns of moving dots (e.g., for dot kinematograms)</p>
+<p>But say you want to do something else. For example, you want to present a single stimulus that drifts away from the center of the screen. How do you control the direction and speed? To set the direction of motion, you simply have to specify x/y coordinates. To set the speed, you have to specify how often you want the coordinates to change. The key again lies in making use of frame-based timing. If you are already cycling over a number of frames (counting up from 0), you can use them to define the new position of your stimulus on each trial:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># drift at the refresh rate of your screen</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">frameN</span><span class="p">)</span> <span class="c1">#make your stimulus drift UP</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">frameN</span><span class="p">)</span> <span class="c1">#make your stimulus drift DOWN</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">frameN</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#make your stimulus drift RIGHT</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">frameN</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#make your stimulus drift LEFT</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">frameN</span><span class="p">,</span><span class="n">frameN</span><span class="p">)</span> <span class="c1">#make your stimulus drift DIAGONALLY</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You get the idea. You can use the frame number to specify the number of pixels to move on each flip. You can also speed up or slow down the drift rate by using multiplication or division:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">frameN</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#make your stimulus drift UP, SLOWER</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">frameN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#make your stimulus drift UP, FASTER</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To use it in a piece of code, it looks like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span><span class="p">,</span> <span class="n">core</span>
+<span class="c1">#-define the monitor settings using psychopy functions</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">fullscr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">CountdownTimer</span><span class="p">()</span> <span class="c1">#timer for trial duration</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> <span class="c1">#random example stimulus</span>
+
+<span class="n">nTrials</span><span class="o">=</span><span class="mi">5</span> <span class="c1">#number of trials to demonstrate effect</span>
+
+<span class="c1">#start trial sequence</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span>   
+    <span class="n">frameN</span><span class="o">=-</span><span class="mi">1</span> <span class="c1">#set frame for beginning of trial</span>
+    <span class="n">timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span> <span class="c1">#reset timer</span>
+    <span class="n">timer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#2-second trial time</span>
+    <span class="k">while</span> <span class="n">timer</span><span class="o">.</span><span class="n">getTime</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">#until the end of trial</span>
+           
+        <span class="n">frameN</span><span class="o">+=</span><span class="mi">1</span><span class="c1">#count frames </span>
+        <span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw stim</span>
+        <span class="n">stim</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">frameN</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#make stim move slowly upward from center</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Keep in mind the position that you specify has to be in the units you assigned to your window (pixels, degrees of visual angle...). This particular bit of code tells the stimulus to move up a quarter of a pixel every frame.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can change a lot about your stimulus dynamically this way - making the stimulus grow or shrink:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flicker_box</span><span class="o">.</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">frameN</span><span class="p">)</span> <span class="c1">#this will make it grow 1 pixel every frame</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And you can change the speed of growth or shrinkage in the same way you changed speed of motion. Pay attention to how things like position and size are defined, because you have to write the proper syntax. If you specify the size of the Rect with "size", it will automatically change both the width and height dimensions. If you want to change height and width independently, you have to define those dimensions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">flicker_box</span><span class="o">.</span><span class="n">height</span><span class="o">=</span><span class="p">(</span><span class="n">frameN</span><span class="p">)</span> <span class="c1">#this will make it taller by 1 pixel every frame</span>
+<span class="n">flicker_box</span><span class="o">.</span><span class="n">width</span><span class="o">=</span><span class="p">(</span><span class="n">frameN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#this will make it taller by 2xframeN every frame</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But in that case, make sure you specify both height and width instead of size (that is, remove the "size=" argument from when you defined your stimulus), or else the values will interact weirdly.</p>
 
 </div>
 </div>
