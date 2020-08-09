@@ -13091,7 +13091,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="By-Reshanne-Ruhnau">By Reshanne Ruhnau<a class="anchor-link" href="#By-Reshanne-Ruhnau">&#182;</a></h3>
+<h3 id="By-Reshanne-Reeder">By Reshanne Reeder<a class="anchor-link" href="#By-Reshanne-Reeder">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13117,7 +13117,7 @@ div#notebook {
 <li><p><a href="#idiot">Special: Idiot-proofing your code: COMING SOON!</a></p>
 </li>
 </ul>
-<p>BACK TO <a href="https://kerblooee.github.io/pytutorial">Level 0: A New Language</a>
+<p>BACK TO <a href="https://kerblooee.github.io/pytutorial/">Level 0: A New Language</a>
 <br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level1.html">Level 1: Manipulating Variables</a>
 <br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level2.html">Level 2: Conditionals and Loops</a>
 <br />BACK TO <a href="https://kerblooee.github.io/pytutorial/level3.html">Level 3: PsychoPy 101</a>
@@ -13294,12 +13294,12 @@ div#notebook {
 <span class="k">def</span> <span class="nf">left_right_text</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">):</span>
     <span class="n">left</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_left</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the left side</span>
     <span class="n">right</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_right</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the right side</span>
-    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position</span>
-    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position in pixels</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position in pixels</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span> <span class="c1">#assign color to left</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span> <span class="c1">#assign color to right</span>
     <span class="n">left</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw left</span>
     <span class="n">right</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw right</span>
-    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#flip window and show all of it</span>
-    <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#wait 1 second</span>
 </pre></div>
 
     </div>
@@ -13317,38 +13317,66 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#for example</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span>
+
+<span class="c1">#monitor specs</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+
+<span class="c1">#for example</span>
 <span class="k">def</span> <span class="nf">left_right_text</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">):</span>
     <span class="n">left</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_left</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the left side</span>
     <span class="n">right</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_right</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the right side</span>
-    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position</span>
-    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span> <span class="c1">#assign color to left</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span> <span class="c1">#assign color to right</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">height</span><span class="o">=</span><span class="mi">50</span> <span class="c1">#assign left text height in pixels</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">height</span><span class="o">=</span><span class="mi">50</span> <span class="c1">#assign right text height in pixels</span>
     <span class="n">left</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw left</span>
     <span class="n">right</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw right</span>
-    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#flip window and show all of it</span>
-    <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#wait 1 second</span>
 
 <span class="c1">#in action</span>
-<span class="n">stim1</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="c1">#random text stim</span>
-<span class="n">stim2</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">)</span> <span class="c1">#random text stim</span>
+<span class="n">stim1</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span> <span class="c1">#random text stim</span>
+<span class="n">stim2</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span> <span class="c1">#random text stim</span>
 
 <span class="n">text_right</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]</span>
-<span class="n">text_left</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Here&#39;</span><span class="p">,</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;the&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">]</span>
+<span class="n">text_left</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Here&#39;</span><span class="p">,</span><span class="s1">&#39;on&#39;</span><span class="p">,</span><span class="s1">&#39;the&#39;</span><span class="p">,</span><span class="s1">&#39;left&#39;</span><span class="p">]</span>
 
 <span class="n">nTrials</span><span class="o">=</span><span class="mi">4</span> <span class="c1">#4 trials for the 4 words</span>
 
 <span class="c1">#cycle through different stimuli on each side</span>
 <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span>
     <span class="n">left_right_text</span><span class="p">(</span><span class="n">stim1</span><span class="p">,</span><span class="n">stim2</span><span class="p">)</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#flip window and show all of it</span>
+    <span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#wait 1 second</span>
     
 <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#close window</span>
-<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span> <span class="c1">#quit experiment</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>777.4983 	WARNING 	Monitor specification not found. Creating a temporary one...
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13363,23 +13391,27 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">timer</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">CountdownTimer</span><span class="p">()</span> <span class="c1">#create countdown timer</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span>
+
+<span class="c1">#monitor specs</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">CountdownTimer</span><span class="p">()</span> <span class="c1">#create countdown timer</span>
 <span class="c1">#your background that changes at its own frequency:</span>
-<span class="n">flicker_box</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">flicker_box</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">left_right_text</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">):</span>
     <span class="n">left</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_left</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the left side</span>
     <span class="n">right</span><span class="o">.</span><span class="n">text</span><span class="o">=</span><span class="n">text_right</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span> <span class="c1">#assign text to the right side</span>
-    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position</span>
-    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign left position</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#assign right position</span>
     <span class="n">left</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw left</span>
     <span class="n">right</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1">#draw right</span>
-    <span class="c1">#remove win.flip() from the function because flipping will occur for each frame now</span>
-    <span class="c1">#remove core.wait() from the function because this will now go into a countdown loop</span>
-
 
 <span class="c1">#cycle through different stimuli on each side</span>
 <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span>   
@@ -13397,16 +13429,33 @@ div#notebook {
         <span class="k">else</span><span class="p">:</span> <span class="n">flicker_box</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
         <span class="n">flicker_box</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         
-        <span class="c1">#remember to present the text on top of the box so it&#39;s not hidden</span>
+        <span class="c1">#present the text</span>
         <span class="n">left_right_text</span><span class="p">(</span><span class="n">stim1</span><span class="p">,</span><span class="n">stim2</span><span class="p">)</span>
         
         <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#flip every frame</span>
         
 <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>982.6053 	WARNING 	Monitor specification not found. Creating a temporary one...
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13421,14 +13470,21 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">flicker</span><span class="p">(</span><span class="n">stim</span><span class="p">,</span><span class="n">freq</span><span class="p">):</span> <span class="c1">#what is the stimulus and flicker frequency?</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">monitors</span>
+
+<span class="c1">#monitor specs</span>
+<span class="n">mon</span> <span class="o">=</span> <span class="n">monitors</span><span class="o">.</span><span class="n">Monitor</span><span class="p">(</span><span class="s1">&#39;myMonitor&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">35.56</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">mon</span><span class="o">.</span><span class="n">setSizePix</span><span class="p">([</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">])</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="n">mon</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">flicker</span><span class="p">(</span><span class="n">stim</span><span class="p">,</span><span class="n">freq</span><span class="p">):</span> <span class="c1">#what is the stimulus and flicker frequency?</span>
     <span class="k">if</span> <span class="n">frameN</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">freq</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">freq</span><span class="p">:</span>
             <span class="n">stim</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span> 
-        <span class="k">else</span><span class="p">:</span> <span class="n">stim</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
-        <span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">stim</span><span class="o">.</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span>
+    <span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         
 <span class="c1">#cycle through different stimuli on each side</span>
 <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nTrials</span><span class="p">):</span>   
@@ -13447,11 +13503,28 @@ div#notebook {
         
         <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1">#flip every frame</span>
         
-<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>        
+<span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>      
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1111.2367 	WARNING 	Monitor specification not found. Creating a temporary one...
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13467,7 +13540,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#So this...</span>
@@ -13540,6 +13613,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can change "%4" to "%nWords" or another value to make it more flexible for your own purposes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
 </div>
@@ -13639,7 +13720,6 @@ div#notebook {
         <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 
 <span class="n">win</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13702,6 +13782,14 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>But in that case, make sure you specify both height and width instead of size (that is, remove the "size=" argument from when you defined your stimulus), or else the values will interact weirdly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="#toc">BACK TO TABLE OF CONTENTS</a></p>
 
 </div>
 </div>
